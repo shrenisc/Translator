@@ -1,9 +1,9 @@
 {
     "builds": [
       {
-        "src": "requirements.txt",
+        "src": "build.sh",
         "use": "@vercel/static-build",
-        "config": {"buildCommand": "pip install -r requirements.txt && wget https://raw.githubusercontent.com/shrenisc/Translator/main/language_translation_model.keras -O language_translation_model.keras"}
+        "config": {"buildCommand": "./build.sh"}
       },
       {
         "src": "app.py",

@@ -4,9 +4,15 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.preprocessing.text import tokenizer_from_json
 import json
+import gzip
+import shutil
 
 app = Flask(__name__)
 
+# Decompress the model file
+with gzip.open('language_translation_model.keras.gz', 'rb') as f_in:
+    with open('language_translation_model.keras', 'wb') as f_out:
+        shutil.copyfileobj(f_in, f_out)
 
 # Load tokenizer
 with open('tokenizer_eng.json', 'r') as f:
