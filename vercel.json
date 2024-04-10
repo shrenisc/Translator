@@ -3,7 +3,7 @@
       {
         "src": "requirements.txt",
         "use": "@vercel/static-build",
-        "config": {"buildCommand": "pip install -r requirements.txt"}
+        "config": {"buildCommand": "pip install -r requirements.txt && npm install"}
       },
       {
         "src": "app.py",
