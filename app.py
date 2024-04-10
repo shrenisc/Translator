@@ -9,11 +9,6 @@ import shutil
 
 app = Flask(__name__)
 
-# Decompress the model file
-with gzip.open('language_translation_model.keras.gz', 'rb') as f_in:
-    with open('language_translation_model.keras', 'wb') as f_out:
-        shutil.copyfileobj(f_in, f_out)
-
 # Load tokenizer
 with open('tokenizer_eng.json', 'r') as f:
     tokenizer_eng_json = json.load(f)
