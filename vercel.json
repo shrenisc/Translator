@@ -1,0 +1,21 @@
+{
+    "builds": [
+      {
+        "src": "requirements.txt",
+        "use": "@vercel/static-build",
+        "config": {"buildCommand": "pip install -r requirements.txt"}
+      },
+      {
+        "src": "app.py",
+        "use": "@vercel/python",
+        "config": {"pythonVersion": "3.8"}
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "app.py"
+      }
+    ]
+  }
+  
