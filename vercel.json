@@ -3,7 +3,7 @@
       {
         "src": "requirements.txt",
         "use": "@vercel/static-build",
-        "config": {"buildCommand": "pip install -r requirements.txt && npm install"}
+        "config": {"buildCommand": "pip install -r requirements.txt && wget https://raw.githubusercontent.com/shrenisc/Translator/main/language_translation_model.keras -O language_translation_model.keras"}
       },
       {
         "src": "app.py",
@@ -12,6 +12,10 @@
       }
     ],
     "routes": [
+      {
+        "src": "/language_translation_model.keras",
+        "dest": "language_translation_model.keras"
+      },
       {
         "src": "/(.*)",
         "dest": "app.py"
